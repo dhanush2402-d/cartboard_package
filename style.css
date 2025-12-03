@@ -54,6 +54,17 @@ section {
     top: 0;
     z-index: 1000;
 }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 105px;
+    height: auto;
+}
+
 .logo h1 {
     margin: 0;
     font-size: 1.8em;
@@ -217,6 +228,12 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     text-align: center;
+    
+}
+.service-card:hover {
+    background-color: #e6eef4; 
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 .service-card h3 {
     color: var(--color-primary);
