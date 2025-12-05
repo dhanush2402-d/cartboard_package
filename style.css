@@ -140,13 +140,18 @@ section {
     background-color: var(--color-text-light);
 }
 .about-content-card {
-    padding: 40px;
+    padding: 80px;
+    background-image: url(bgabout.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);     
+    background-blend-mode: multiply;
 }
 .lead-text {
     font-size: 1.1em;
     margin-bottom: 30px;
-    border-bottom: 2px solid #eee;
     padding-bottom: 20px;
+    color: #ccc;
 }
 .key-pillars-grid {
     display: flex;
@@ -234,6 +239,10 @@ section {
     background-color: #e6eef4; 
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.service-card{
+    background-image: url(logistics.jpg);
+    background-image: url(custom.jpg);
 }
 .service-card h3 {
     color: var(--color-primary);
