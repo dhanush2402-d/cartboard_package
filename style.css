@@ -54,6 +54,15 @@ section {
     top: 0;
     z-index: 1000;
 }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    width: 55px;
+    height: auto;
+}
 .logo h1 {
     margin: 0;
     font-size: 1.8em;
