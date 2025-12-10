@@ -68,7 +68,7 @@ section {
 .logo h1 {
     margin: 0;
     font-size: 1.8em;
-    letter-spacing: 1px;
+    letter-spacing: 1%;
 }
 .top-nav ul {
     list-style: none;
@@ -241,8 +241,7 @@ section {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 .service-card{
-    background-image: url(logistics.jpg);
-    background-image: url(custom.jpg);
+    background-image: url(indexcard.png);
 }
 .service-card h3 {
     color: var(--color-primary);
