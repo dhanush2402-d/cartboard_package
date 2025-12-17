@@ -167,14 +167,29 @@ section {
 .card {
   background: #fff;
   border-radius: var(--border-radius-card);
-  padding: 32px;
+  padding: 22px;
   box-shadow: var(--shadow-subtle);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;  
+}
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
 .card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-hover);
+  
 }
 input,
 textarea,
