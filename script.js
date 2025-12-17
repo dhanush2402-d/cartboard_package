@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', closeMenu);
   }
   const navbarCollapse = document.querySelector('.navbar-collapse');
+
   window.addEventListener('scroll', () => {
     if (
       window.innerWidth < 992 &&
