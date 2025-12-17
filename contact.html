@@ -4,48 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Global Packaging Industries - Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body data-page="contact">
-  <header class="main-header">
-    <div class="logo">
-      <img src="logo.jpg">
-    </div>
-    <nav class="top-nav">
-      <ul>
-        <li><a href="index.html" class="nav-item">Home</a></li>
-        <li><a href="about.html" class="nav-item">About</a></li>
-        <li><a href="contact.html" class="nav-item">Contact</a></li>
-        <li><a href="quote.html" class="nav-item-cta">Get Quote</a></li>
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="logo.png" alt="Global Packaging Industries Logo" height="80">
+      <span class="fw-bold text-dark brand-text">Global Packaging</span>
+    </a>
+    <button class="navbar-toggler" type="button" onclick="toggleDrawer()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-none d-lg-block">
+      <ul class="navbar-nav ms-auto align-items-center gap-3">
+
+        <li class="nav-item">
+          <a class="nav-link fw-medium" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fw-medium" href="about.html">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fw-medium active" href="contact.html">Contact</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="btn btn-primary text-white px-3" href="quote.html">
+            Get Quote
+          </a>
+        </li>
+
       </ul>
-    </nav>
-  </header>
-  <section id="contact" class="contact-section">
-    <h2 class="section-title"> Get In Touch with Our Team</h2>
-    <div class="contact-grid">
-      <div class="card contact-info-card">
-        <h3>Our Office</h3>
-        <p><i class="fas fa-map-marker-alt"></i> <strong>Head Office:</strong> 123 Industrial Area, Cardboard Road, Chennai - 600001, India</p>
-        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@globalpackaging.in">info@globalpackaging.in</a></p>
-        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 98765 43210</p>
-        <p class="hours-text"><i class="fas fa-clock"></i> <strong>Business Hours:</strong> Mon - Fri, 9:00 AM to 6:00 PM IST</p>
-      </div>
-      <div class="card contact-cta-card">
-        <h3>Quick Actions</h3>
-        <p>Ready to see what we can do? Use our quick links below:</p>
-        <a href="home.html#services" class="btn btn-secondary" style="margin-bottom:15px;">
-          <i class="fas fa-box"></i> View Products & Services
-        </a>
-        <a href="quote.html" class="btn btn-cta">
-          <i class="fas fa-paper-plane"></i> Request a Custom Quote
-        </a>
-      </div>
     </div>
-  </section>
-  <footer class="main-footer">
-    <p>&copy; 2025 Global Packaging Industries. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
+
+  </div>
+</nav>
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="close-drawer" onclick="toggleDrawer()">
+    <i class="fas fa-times"></i>
+  </button>
+  <ul class="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <a href="quote.html" class="btn btn-primary text-white w-100">
+        Get Quote
+      </a>
+    </li>
+  </ul>
+</div>
+<div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+<section id="contact" class="contact-section">
+  <h2 class="section-title">Get In Touch with Our Team</h2>
+  <div class="contact-grid">
+    <div class="card contact-info-card">
+      <h3>Our Office</h3>
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        <strong>Head Office:</strong>
+        123 Industrial Area, Cardboard Road, Chennai – 600001, India
+      </p>
+      <p>
+        <i class="fas fa-envelope"></i>
+        <strong>Email:</strong>
+        <a href="mailto:info@globalpackaging.in">
+          info@globalpackaging.in
+        </a>
+      </p>
+      <p>
+        <i class="fas fa-phone"></i>
+        <strong>Phone:</strong> +91 98765 43210
+      </p>
+      <p class="hours-text">
+        <i class="fas fa-clock"></i>
+        <strong>Business Hours:</strong>
+        Mon – Fri, 9:00 AM to 6:00 PM IST
+      </p>
+    </div>
+    <div class="card contact-cta-card">
+      <h3>Quick Actions</h3>
+      <p>Ready to see what we can do? Use our quick links below:</p>
+      <a href="index.html#services" class="btn btn-secondary mb-3">
+        <i class="fas fa-box"></i> View Products & Services
+      </a>
+      <a href="quote.html" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i> Request a Custom Quote
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="main-footer">
+  <p>&copy; 2025 Global Packaging Industries. All rights reserved.</p>
+</footer>
+<script>
+  function toggleDrawer() {
+    document.getElementById("mobileDrawer").classList.toggle("active");
+    document.getElementById("drawerOverlay").classList.toggle("active");
+  }
+</script>
 </body>
 </html>

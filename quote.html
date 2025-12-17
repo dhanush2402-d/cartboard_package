@@ -4,127 +4,173 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Global Packaging Industries - Request a Quote</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body data-page="quote">
-  <header class="main-header">
-    <div class="logo"><img src="logo.jpg"></div>
-    <nav class="top-nav">
-      <ul>
-        <li><a href="index.html" class="nav-item">Home</a></li>
-        <li><a href="about.html" class="nav-item">About</a></li>
-        <li><a href="contact.html" class="nav-item">Contact</a></li>
-        <li><a href="quote.html" class="nav-item-cta">Get Quote</a></li>
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="logo.png" alt="Global Packaging Industries Logo" height="80">
+      <span class="fw-bold text-dark brand-text">Global Packaging</span>
+    </a>
+  <button class="navbar-toggler" type="button" onclick="toggleDrawer()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-none d-lg-block">
+      <ul class="navbar-nav ms-auto align-items-center gap-3">
+
+        <li class="nav-item">
+          <a class="nav-link fw-medium" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fw-medium" href="about.html">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fw-medium" href="contact.html">Contact</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="btn btn-primary text-white px-3 active" href="quote.html">
+            Get Quote
+          </a>
+        </li>
+
       </ul>
-    </nav>
-  </header>
-  <section id="quote" class="quote-section">
-    <h2 class="section-title">Request a Packaging Quote</h2>
-    <div class="card quote-card">
-      <form action="/submit-quote" method="POST" class="quote-form" enctype="multipart/form-data">
-             <fieldset class="form-section-fieldset">
-          <legend>Customer Information</legend>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="full_name">Full Name <span class="required">*</span></label>
-              <input type="text" id="full_name" name="full_name" class="rounded-input" required>
-            </div>
-            <div class="form-group">
-              <label for="company_name">Company Name (Optional)</label>
-              <input type="text" id="company_name" name="company_name" class="rounded-input">
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address <span class="required">*</span></label>
-              <input type="email" id="email" name="email" class="rounded-input" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number <span class="required">*</span></label>
-              <input type="tel" id="phone" name="phone" class="rounded-input" required>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset class="form-section-fieldset">
-          <legend>Product Requirement Details</legend>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="packaging_type">Packaging Type <span class="required">*</span></label>
-              <select id="packaging_type" name="packaging_type" class="rounded-input" required>
-                <option value="" disabled selected>Select a Type</option>
-                <option value="corrugated_box">Corrugated Box</option>
-                <option value="shipping_carton">Shipping Carton</option>
-                <option value="display_tray">Display Tray</option>
-                <option value="die_cut">Die-Cut Packaging</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group dimension-group">
-              <label>Dimensions (L x W x H in mm) <span class="required">*</span></label>
-              <div class="dimension-inputs">
-                <input type="number" name="dim_length" placeholder="Length" min="1" required>
-                <span class="dim-separator">x</span>
-                <input type="number" name="dim_width" placeholder="Width" min="1" required>
-                <span class="dim-separator">x</span>
-                <input type="number" name="dim_height" placeholder="Height" min="1" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="material">Material Selection <span class="required">*</span></label>
-              <input type="text" id="material" name="material" class="rounded-input" placeholder="e.g., 3-Ply, 5-Ply, Kraft Paper" required>
-            </div>
-            <div class="form-group">
-              <label for="quantity">Quantity Required <span class="required">*</span></label>
-              <input type="number" id="quantity" name="quantity" class="rounded-input" min="100" placeholder="Minimum 100" required>
-            </div>
-          </div>
-          <div class="form-group full-width">
-            <label>Printing Requirements <span class="required">*</span></label>
-            <div class="toggle-switch-group">
-              <label class="toggle-switch-container">
-                <input type="checkbox" name="printing_needed" value="yes" checked>
-                <span class="slider round"></span>
-              </label>
-              <input type="text" name="printing_details" class="rounded-input" placeholder="Specify colors, logos, or complexity">
-            </div>
-          </div>
-          <div class="form-group full-width">
-            <label for="design_upload">Upload Design/Sample (Max 5MB)</label>
-            <input type="file" id="design_upload" name="design_upload" accept=".pdf,.jpg,.png,.ai,.zip">
-          </div>
-        </fieldset>
-        <fieldset class="form-section-fieldset">
-          <legend>Delivery Information</legend>
-          <div class="form-grid">
-            <div class="form-group full-width">
-              <label for="shipping_address">Shipping Address <span class="required">*</span></label>
-              <textarea id="shipping_address" name="shipping_address" class="rounded-input" rows="3" required></textarea>
-            </div>
-            <div class="form-group">
-              <label for="delivery_timeline">Delivery Timeline Preference <span class="required">*</span></label>
-              <select id="delivery_timeline" name="delivery_timeline" class="rounded-input" required>
-                <option value="" disabled selected>Select Timeline</option>
-                <option value="urgent">Urgent (ASAP)</option>
-                <option value="2-4_weeks">2-4 Weeks</option>
-                <option value="4-8_weeks">4-8 Weeks</option>
-                <option value="flexible">Flexible</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="notes">Additional Notes or Message</label>
-              <textarea id="notes" name="notes" class="rounded-input" rows="3"></textarea>
-            </div>
-          </div>
-        </fieldset>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-cta">Get Quote</button>
-          <button type="reset" class="btn btn-secondary">Reset Form</button>
-        </div>
-      </form>
     </div>
-  </section>
-  <footer class="main-footer">
-    <p>&copy; 2025 Global Packaging Industries. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
+
+  </div>
+</nav>
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="close-drawer" onclick="toggleDrawer()">
+    <i class="fas fa-times"></i>
+  </button>
+
+  <ul class="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <a href="quote.html" class="btn btn-primary text-white w-100">
+        Get Quote
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+<section id="quote" class="quote-section">
+  <h2 class="section-title">Request a Packaging Quote</h2>
+
+  <div class="card quote-card">
+    <form action="/submit-quote" method="POST" class="quote-form" enctype="multipart/form-data">
+      <fieldset class="form-section-fieldset">
+        <legend>Customer Information</legend>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" class="rounded-input" required>
+          </div>
+
+          <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" class="rounded-input">
+          </div>
+
+          <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" class="rounded-input" required>
+          </div>
+
+          <div class="form-group">
+            <label>Phone <span class="required">*</span></label>
+            <input type="tel" class="rounded-input" required>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="form-section-fieldset">
+        <legend>Product Requirement Details</legend>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Packaging Type <span class="required">*</span></label>
+            <select class="rounded-input" required>
+              <option disabled selected>Select a Type</option>
+              <option>Corrugated Box</option>
+              <option>Shipping Carton</option>
+              <option>Display Tray</option>
+              <option>Die-Cut Packaging</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Dimensions (L × W × H in mm)</label>
+            <div class="dimension-inputs">
+              <input type="number" placeholder="Length" min="1" required>
+              <span>×</span>
+              <input type="number" placeholder="Width" min="1" required>
+              <span>×</span>
+              <input type="number" placeholder="Height" min="1" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Material <span class="required">*</span></label>
+            <input type="text" class="rounded-input" required>
+          </div>
+
+          <div class="form-group">
+            <label>Quantity <span class="required">*</span></label>
+            <input type="number" class="rounded-input" min="100" required>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="form-section-fieldset">
+        <legend>Delivery Information</legend>
+
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label>Shipping Address <span class="required">*</span></label>
+            <textarea class="rounded-input" rows="3" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Delivery Timeline</label>
+            <select class="rounded-input" required>
+              <option disabled selected>Select Timeline</option>
+              <option>Urgent</option>
+              <option>2–4 Weeks</option>
+              <option>4–8 Weeks</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea class="rounded-input" rows="3"></textarea>
+          </div>
+        </div>
+      </fieldset>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Get Quote</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+      </div>
+    </form>
+  </div>
+</section>
+<footer class="main-footer">
+  <p>&copy; 2025 Global Packaging Industries. All rights reserved.</p>
+</footer>
+<script>
+  function toggleDrawer() {
+    document.getElementById("mobileDrawer").classList.toggle("active");
+    document.getElementById("drawerOverlay").classList.toggle("active");
+  }
+</script>
 </body>
 </html>
